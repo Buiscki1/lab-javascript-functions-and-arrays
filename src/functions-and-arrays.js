@@ -59,7 +59,7 @@ function sum(parameter) {
       sum += element
     }
     else if (typeof element === 'object') {
-      throw "This function doesn't accept objects"
+      throw new Error ("Unsupported data type sir or ma'am")
     }
   }
   return sum
@@ -146,6 +146,7 @@ function doesWordExist(array, word) {
     if (array.indexOf(word) !== -1) {
       break;
     }
+    
   }
   return array.indexOf(word) !== -1;
 }
@@ -165,8 +166,14 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
-
+function howManyTimes(array, word) {
+  let count = 0;
+  
+  for (let count of array) {
+    if (count===word) count++
+  }
+  return count
+}
 
 
 // Iteration #8: Bonus
